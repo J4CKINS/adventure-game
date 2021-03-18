@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class MenuScreen extends StatelessWidget {
 
-  String _text = "Welcome to the Adventure Game\n\nYou will have to choose one of two answers on each question, there are different routes.";
+  final String _text = "Welcome to the Adventure Game\n\nYou will have to choose one of two answers on each question, there are different routes.";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
