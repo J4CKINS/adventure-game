@@ -1,7 +1,8 @@
-import 'package:adventureapp/screens/question.dart';
+import 'package:adventureapp/classes/question.dart';
 import 'package:flutter/material.dart';
 import 'screens/menu.dart';
-import 'classes/questions.dart';
+import 'screens/questions.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
-      home: Questions.questions()[0],
+      home: MenuScreen(),
     );
   }
 }

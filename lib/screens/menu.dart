@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'questions.dart';
 
 class MenuScreen extends StatelessWidget {
 
@@ -15,7 +16,9 @@ class MenuScreen extends StatelessWidget {
               Text(_text, style: TextStyle(fontSize: 30), textAlign: TextAlign.center,),
               Padding(padding: EdgeInsets.only(top:50)),
               ElevatedButton(autofocus: false, clipBehavior: Clip.none, child: Padding(padding: EdgeInsets.all(10), child: Text("Start", style:TextStyle(fontSize: 20, color: Colors.white)),),
-              onPressed: (){})
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Question1()));
+              })
           ],),
         )
       ),

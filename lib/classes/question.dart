@@ -1,6 +1,10 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 
 abstract class Question extends StatelessWidget {
+
+  Question choice;
 
   final String text;
   final List<String> images;
@@ -34,8 +38,11 @@ abstract class Question extends StatelessWidget {
 
               Padding(padding:EdgeInsets.only(top:60)),
 
-              BuildControls()
+              BuildControls(),
 
+              Padding(padding:EdgeInsets.only(top:50)),
+
+              ElevatedButton(onPressed: () {NextQuestion(context, choice);}, child: Padding(child: Text("Submit", style: TextStyle(fontSize: 20)), padding: EdgeInsets.all(10)))
             ],
           ),
         ),
@@ -44,4 +51,13 @@ abstract class Question extends StatelessWidget {
   }
 
   Widget BuildControls();
+
+  void NextQuestion(BuildContext context, Question question) {
+    if (choice != null) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => question)
+      );
+    }
+  }
 }
