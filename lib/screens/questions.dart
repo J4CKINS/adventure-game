@@ -28,11 +28,29 @@ class Question2 extends Question {
 }
 
 class Question3 extends Question {
+
   Question3():super(text:"You find a stable tree and a sheltered area on the ground, where do you sleep?", images:[]);
 
   @override
   Widget BuildControls() {
+    
     return Column(children: [
+      ListTile(
+        title: Text("Up in the tree"),
+        leading: Radio(
+          value: Question1(),
+          groupValue: choice,
+          onChanged: (Question value){choice = value;},
+        ),
+      ),
+      ListTile(
+        title: Text("Sheltered area"),
+        leading: Radio(
+          value: Question2(),
+          groupValue: choice,
+          onChanged: (Question value){choice = value;},
+        ),
+      )
     ]);
   }
 }
