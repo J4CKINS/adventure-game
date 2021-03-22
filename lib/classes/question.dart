@@ -13,6 +13,7 @@ abstract class QuestionState extends State<Question> {
 
   String text;
   List<String> images;
+  QuestionState choice;
 
   QuestionState({this.text, this.images});
 
@@ -21,15 +22,23 @@ abstract class QuestionState extends State<Question> {
     return Scaffold(
       appBar: AppBar(title: Center(child:Text("Adventure Game", style: TextStyle(fontSize: 30),))),
       body:Container(
-        child:Column(children: [
-          Text(text),
-          
-          Row(children: [
-            for(String image in images)
-            Image(image: AssetImage(image),)
-          ]),
+        padding: EdgeInsets.all(10),
+        child:Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Text(text, style: TextStyle(fontSize: 25), textAlign: TextAlign.center,),
+            
+            Row(children: [
+              for(String image in images)
+              Image(image: AssetImage(image),)
+            ]),
 
-          buildControls()
+            buildControls(),
+
+            ElevatedButton(autofocus: false, clipBehavior: Clip.none, child: Padding(padding: EdgeInsets.all(10), child: Text("Submit", style:TextStyle(fontSize: 20, color: Colors.white)),),
+            onPressed: (){
+              submit();
+            })
 
         ])
       )
@@ -37,4 +46,13 @@ abstract class QuestionState extends State<Question> {
   }
 
   Widget buildControls();
+
+  void submit() {
+    if (choice != null) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => Question(state: choice))
+      );
+    }
+  }
 }
