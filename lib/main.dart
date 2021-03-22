@@ -1,8 +1,5 @@
-import 'package:adventureapp/classes/question.dart';
 import 'package:flutter/material.dart';
 import 'screens/menu.dart';
-import 'screens/questions.dart';
-
 
 void main() {
   runApp(MyApp());
