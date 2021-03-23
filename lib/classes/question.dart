@@ -28,9 +28,9 @@ abstract class QuestionState extends State<Question> {
           children: [
             Text(text, style: TextStyle(fontSize: 25), textAlign: TextAlign.center,),
             
-            Row(children: [
+            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
               for(String image in images)
-              Image(image: AssetImage(image),)
+              Image(image: AssetImage(image), width: 150, height: 150,)
             ]),
 
             buildControls(),
