@@ -14,32 +14,35 @@ class EndingScreen extends StatelessWidget {
       body: Container(
         padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
 
             if(medal != null)
             Image(image: AssetImage(medal), width: 250, height:250),
 
-            Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              
-              Text(text),
+            Text(
+                text,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 20
+                ),  
+              ),
 
-              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,children: [
-                ElevatedButton(child: Padding(padding: EdgeInsets.all(10), child: Text("Share")), onPressed: (){
 
-                }),
 
-                ElevatedButton(child: Padding(padding: EdgeInsets.all(10), child: Text("Retry")), onPressed: (){
+            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,children: [
+              ElevatedButton(child: Padding(padding: EdgeInsets.all(10), child: Text("Share")), onPressed: (){
 
-                }),
+              }),
 
-                ElevatedButton(child: Padding(padding: EdgeInsets.all(10), child: Text("Menu")), onPressed: (){
+              ElevatedButton(child: Padding(padding: EdgeInsets.all(10), child: Text("Retry")), onPressed: (){
 
-                }),
-              ])
-            ],
-            ),
+              }),
+
+              ElevatedButton(child: Padding(padding: EdgeInsets.all(10), child: Text("Menu")), onPressed: (){
+
+              }),
+            ])
           ],
         ),
       )
