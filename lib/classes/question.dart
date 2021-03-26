@@ -49,10 +49,14 @@ abstract class QuestionState extends State<Question> {
 
   void submit() {
     if (choice != null) {
-      Navigator.push(
+      navigateTo(choice);
+    }
+  }
+
+  void navigateTo(QuestionState state) {
+    Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => Question(state: choice))
-      );
-    }
+    );
   }
 }
