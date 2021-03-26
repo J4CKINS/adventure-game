@@ -54,9 +54,6 @@ abstract class QuestionState extends State<Question> {
   }
 
   void navigateTo(Widget page) {
-    Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => page)
-    );
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => page));
   }
 }
