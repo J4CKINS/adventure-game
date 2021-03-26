@@ -13,7 +13,7 @@ abstract class QuestionState extends State<Question> {
 
   String text;
   List<String> images;
-  QuestionState choice;
+  Widget choice;
 
   QuestionState({this.text, this.images});
 
@@ -53,10 +53,10 @@ abstract class QuestionState extends State<Question> {
     }
   }
 
-  void navigateTo(QuestionState state) {
+  void navigateTo(Widget page) {
     Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => Question(state: choice))
+        MaterialPageRoute(builder: (context) => page)
     );
   }
 }
