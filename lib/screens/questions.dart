@@ -171,7 +171,8 @@ class Question6 extends QuestionState {
         onChanged: (bool value) {
           setState(() {
             switchValue = value;
-            if (value) {
+            print(value);
+            if (switchValue) {
               choice = EndingScreen(text: GameText.ending4, medal:"gold_medal.png");
             }else {
               choice = EndingScreen(text: GameText.ending3, medal:"silver_medal.png");
