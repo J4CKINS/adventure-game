@@ -44,7 +44,6 @@ class EndingScreen extends StatelessWidget {
               }),
 
               ElevatedButton(child: Padding(padding: EdgeInsets.all(10), child: Text("Menu")), onPressed: (){
-                Navigator.pop(context);
                 Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MenuScreen()));
               }),
             ])
