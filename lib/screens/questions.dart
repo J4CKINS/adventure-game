@@ -29,7 +29,14 @@ class Question1 extends QuestionState {
 
 class Question2 extends QuestionState {
   Question2():super(text:GameText.question2, images: []);
-  bool checkboxChoice = false;
+  bool checkboxChoice = true;
+
+  @override
+  void initState() {
+    choice = Question(state: Question4());
+    super.initState();
+  }
+
   @override
   Widget buildControls() {
     return Column(children: [
