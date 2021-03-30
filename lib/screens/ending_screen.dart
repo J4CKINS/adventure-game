@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'questions.dart';
+import 'menu.dart';
+import '../classes/question.dart';
 
 class EndingScreen extends StatelessWidget {
 
@@ -36,11 +39,13 @@ class EndingScreen extends StatelessWidget {
               }),
 
               ElevatedButton(child: Padding(padding: EdgeInsets.all(10), child: Text("Retry")), onPressed: (){
-
+                Navigator.pop(context);
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Question(state:Question1())));
               }),
 
               ElevatedButton(child: Padding(padding: EdgeInsets.all(10), child: Text("Menu")), onPressed: (){
-
+                Navigator.pop(context);
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MenuScreen()));
               }),
             ])
           ],
